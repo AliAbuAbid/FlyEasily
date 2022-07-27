@@ -1,0 +1,29 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  {% load static %} 
+    <meta charset="UTF-8">  
+    <title>FlyEasily</title>  
+    <link href="#" rel="stylesheet"><link rel="stylesheet" href="{% static 'gn.css' %}">  
+</head>  
+<body>  
+    <h1>Workers reports</h1><br>
+    <article>
+        <table>
+            <tr>
+                <th>Worker Name</th>
+                <th>Report</th>
+               
+            </tr>
+            
+            {% for reporting in reported %}
+            <tr>
+            <td>{{reporting.workername }}</td>
+            <td>{{reporting.text}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </article>
+    {% comment %} <input href="reports" type="submit" id="submit" name="submit" value="Send a Report">  {% endcomment %}
+</body>  
+</html>  

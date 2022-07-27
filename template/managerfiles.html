@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon"
+              href="{% static 'logo.jpg' %}"
+              type="image/jpg"
+              sizes="16x16">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+              rel="stylesheet"
+              id="bootstrap-css">
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+        {% comment %} <link type="text/css" rel="stylesheet" href="{% static 'css/login.css' %}"> {% endcomment %}
+        <title>Login</title>
+        <style media="screen">
+            *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            text-decoration: none;
+            letter-spacing: 1px;
+            
+            }
+            
+            body{
+            background: url("https://pbs.twimg.com/media/FRHz2aPXsAAo5W6?format=jpg&name=large");
+            background-position: center;
+            background-repeat: no-repeat;
+            }
+            
+            
+            .wrapper{
+            max-width: 350px;
+            height: 100%;
+            margin: 5px auto;
+            padding: 10px;
+            }
+            
+            .wrapper .title h1{
+            text-align: center;
+            color: #000000;
+            font-family:'Brus Script MT', cursive;
+            margin-bottom: 30px;
+            }
+            
+            .login-container{
+            width: 100%
+            }
+            
+            .login-container .email{
+            margin-bottom: 35px;
+            position: relative;
+            }
+            
+            .login-container .fas{
+            position: absolute;
+            bottom: 15px;
+            right: 25px;
+            font-size: 25px;
+            color: #000000;
+            }
+            
+            .login-container .label{
+            display: block;
+            color: #000000;
+            margin-bottom: 5px;
+            font-weight: bold;
+            font-family:'Brus Script MT', cursive;
+            }
+            
+            .login-container .input{
+            max-width: 325px;
+            width: 100%;
+            border: 2px solid rgb(180, 179, 180);
+            padding: 20px 15px;
+            font-size: 16px;
+            border-radius: 12px;
+            background: rgba(105, 105, 105, 0.55);
+            font-weight: bold;
+            outline: none;
+            }
+            
+            ::-webkit-input-placeholder {
+            /* Chrome/Opera/Safari */
+            color: #d2dbe4;
+            }
+            ::-moz-placeholder {
+            /* Firefox 19+ */
+            color: #d2dbe4;
+            }
+            :-ms-input-placeholder {
+            /* IE 10+ */
+            color: #d2dbe4;
+            }
+            
+            .login-container .password{
+            margin-bottom: 20px;
+            position: relative;
+            color:rgb(255, 255, 255);
+            font-weight: bold;
+            font-family:'Brus Script MT', cursive;
+            
+            }
+            
+            .login-container .forgot{
+            margin-bottom: 75px;
+            }
+            
+            .login-container .forgot a{
+            float: right;
+            color: rgb(248, 248, 248);
+            color: rgb(255, 255, 255);
+            
+            transition: all 0.5s ease;
+            font-weight: bold;
+            }
+            
+            .login-container .forgot a:hover{
+              color: rgb(10, 240, 163);
+            
+            }
+            
+            .login{
+            background: rgba(0, 0, 0, 0.411);
+            color:rgb(255, 255, 255);
+            text-align:  center;
+            border-radius: 7px;
+            padding: 30px;
+            
+            }
+            
+            
+            
+            .login a{
+                
+            font-size: 30px;
+            color: #f0f8ff;
+            }
+            
+            .login-container .login a:hover{
+              color: rgb(10, 240, 163);
+            
+            }
+
+            .login-container1{
+                background:rgba(6, 212, 160, 0.555);
+                text-align:  center;
+                border-radius: 5px;
+                padding: 30px;
+                
+                }
+                
+                
+                
+                .login-container1 a{
+                font-size: 30px;
+                color: #f0f8ff;
+                }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div class="login-main-text">
+                <h1 class="login-container">Fly Easily</h1>
+                <p>
+                </p>
+            </div>
+        </div>
+        <div class="login-container">
+            <div class="wrapper">
+                <div class="login">
+                    <form method="POST" action=".">
+                        {% csrf_token %}
+                        <div class="password">
+                            <label class="label">Id</label>
+                            <input type="number" class="input" required placeholder="primarykey" name="count" > 
+                            <label>Add File</label>
+                            <input type="file" name="files" class="file" placeholder="add file">
+                            <label class="label"> Passenger Full Name  </label>
+                            <input type="id" class="input" required placeholder="Enter passenger full name"name="passenger_name">
+                            <label class="label"> Passenger Id Number  </label>
+                            <input type="id" class="input" required placeholder="Enter passenger id"name="passenger_id">
+                        </div>
+                        <div class="login-container">
+                            <button type="submit" class="login">send</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

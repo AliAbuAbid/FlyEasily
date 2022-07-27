@@ -1,0 +1,31 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  {% load static %} 
+    <meta charset="UTF-8">  
+    <title>Employee Records</title>  
+    <link href="#" rel="stylesheet"><link rel="stylesheet" href="{% static 'gn.css' %}">  
+</head>  
+<body>  
+    <h1>Passengers rating</h1><br>
+    <article>
+        <table>
+            <tr>
+                <th>Full Name</th>
+                <th>Worker Name</th>
+                <th>Rating</th>
+               
+            </tr>
+            
+            {% for rating in rate %}
+            <tr>
+            <td>{{rating.name }}</td>
+            <td>{{rating.id}}</td>
+            <td>{{rating.rating}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </article>
+    {% comment %} <input href="reports" type="submit" id="submit" name="submit" value="Send a Report">  {% endcomment %}
+</body>  
+</html>  

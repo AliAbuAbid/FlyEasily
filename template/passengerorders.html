@@ -1,0 +1,38 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  {% load static %} 
+    <meta charset="UTF-8">  
+    <title>Employee Records</title>  
+    <link href="#" rel="stylesheet"><link rel="stylesheet" href="{% static 'show.css' %}">  
+</head>  
+<body>  
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>Cold Drinks</th>  
+        <th>Hot Drinks</th>  
+        <th>Chair</th>  
+        <th>Food</th>  
+        <th>Other</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for ordered in passegngers %}  
+    <tr>  
+        <td>{{ ordered.cold }}</td>  
+        <td>{{ ordered.hot }}</td>  
+        <td>{{ ordered.chair }}</td>  
+        <td>{{ ordered.food }}</td>
+        <td>{{ ordered.other }}</td>  
+
+       
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<input href="orders" type="submit" id="submit" name="submit" value="Order another thing"> 
+</body>  
+</html>  

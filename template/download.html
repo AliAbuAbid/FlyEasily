@@ -1,0 +1,32 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  {% load static %} 
+    <meta charset="UTF-8">  
+    <title>Employee Reports</title>  
+    <link href="#" rel="stylesheet"><link rel="stylesheet" href="{% static 'gn.css' %}">  
+</head>  
+<body>  
+    <h1>travil files</h1><br>
+    <article>
+        <table>
+            <tr>
+                <th>Passenger Name</th>
+                <th>Passenger id</th>
+                <th>Files</th>
+               
+            </tr>
+            
+            {% for filing in File %}
+            <tr>
+            <td>{{filing.passenger_name }}</td>
+            <td>{{filing.passenger_id}}</td>
+            <td> <a style="color:#FF9E00" href="" download="{{filing.files}}"> {{filing.files}} </td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    </article>
+    {% comment %} <input href="reports" type="submit" id="submit" name="submit" value="Send a Report">  {% endcomment %}
+</body>  
+</html>  
